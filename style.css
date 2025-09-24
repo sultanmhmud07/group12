@@ -1,0 +1,229 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #FFEB3B; /* Kuning dominan */
+  color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+
+header {
+  background-color: #222;
+  color: #FFEB3B;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 10px #f44336aa;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: drop-shadow(0 0 5px #f44336cc);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px #f44336aa;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #FFEB3B;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 4px #f44336aa;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #f44336;
+  box-shadow: 0 0 10px #f44336cc;
+  color: #fff;
+}
+
+main {
+  flex: 1;
+  padding: 20px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.page {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  will-change: opacity;
+}
+
+.page.active {
+  display: block;
+  opacity: 1;
+}
+
+h2 {
+  color: #222;
+  text-align: center;
+  margin-bottom: 15px;
+  text-shadow: 0 0 3px #f4433677;
+}
+
+article {
+  background: #fff9c4;
+  border-left: 5px solid #f44336;
+  padding: 15px 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 8px #f4433666;
+  color: #333;
+}
+
+.jurusan-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 15px;
+}
+
+.jurusan-list li {
+  background: #fff9c4;
+  border-left: 6px solid #f44336;
+  padding: 12px 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 7px #f4433666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #222;
+}
+
+.jurusan-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  background: #fff9c4;
+  border-left: 5px solid #f44336;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  padding: 0 20px;
+  box-shadow: 0 0 8px #f4433666;
+  color: #333;
+}
+
+.jurusan-detail.active {
+  max-height: 500px; /* nilai cukup besar agar konten muncul */
+  padding: 15px 20px;
+}
+.jurusan-detail h3 {
+  margin-top: 0;
+}
+
+.icon {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 2px #f44336cc);
+}
+
+.responsive-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #f4433677;
+  transition: transform 0.3s ease;
+}
+
+.responsive-image:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #222;
+  color: #FFEB3B;
+  text-align: center;
+  padding: 15px 10px;
+  font-weight: 600;
+  text-shadow: 0 0 4px #f44336aa;
+  box-shadow: inset 0 0 10px #f44336cc;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background-color: #222;
+    position: fixed;
+    top: 65px;
+    right: 0;
+    width: 160px;
+    height: calc(100vh - 65px);
+    padding: 15px;
+    gap: 10px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -2px 0 10px #f44336aa;
+    border-radius: 0 0 0 10px;
+  }
+  nav ul.open {
+    transform: translateX(0);
+  }
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+  header {
+    flex-wrap: wrap;
+  }
+  .responsive-image {
+    max-width: 100%;
+  }
+}
+
+/* Neon subtle glow */
+nav ul li a,
+header h1,
+.logo-container img {
+  transition: filter 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  filter: drop-shadow(0 0 8px #f4433677);
+}
+
+.logo {
+  transition: filter 0.3s ease;
+}
