@@ -7,14 +7,24 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+  
 <header>
+  <!-- Logo -->
   <div class="logo-container">
     <img src="smkn4.jpg" alt="Logo SMKN 4 Jakarta" class="logo" />
     <h1>SMKN 4 Jakarta</h1>
   </div>
+
+  <!-- Tombol Hamburger -->
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menu Navigasi -->
   <nav>
-    <ul>
+    <ul id="nav-menu">
       <li><a href="#home" class="nav-link active" data-target="home"><span class="icon">🏠</span> Home</a></li>
       <li><a href="#sejarah" class="nav-link" data-target="sejarah"><span class="icon">📜</span> Sejarah</a></li>
       <li><a href="#fasilitas" class="nav-link" data-target="fasilitas"><span class="icon">🛠️</span> Fasilitas</a></li>
@@ -24,17 +34,14 @@
   </nav>
 </header>
 
+
 <main>
   <!-- HOME -->
   <section id="home" class="page active">
-    <h2>Selamat Datang di SMKN 4 Jakarta</h2>
-    <p>
-      SMKN 4 Jakarta adalah sekolah menengah kejuruan unggulan di ibu kota yang telah berdiri sejak 1959.  
-      Kami berkomitmen untuk mencetak generasi muda yang siap bersaing di dunia industri dan teknologi.  
-    </p>
-    <p>
-      Dengan 10 jurusan keahlian dan fasilitas lengkap, kami terus berinovasi dan berprestasi di tingkat nasional.  
-    </p>
+<div class="content">
+  <h2>Selamat Datang di SMKN 4 Jakarta</h2>
+  <p>SMK Negeri 4 Jakarta adalah salah satu sekolah menengah kejuruan negeri unggulan di Jakarta Utara yang berdiri sejak 26 Juli 1955. Sekolah ini berlokasi di Jl. Rorotan VI No.1, Kelurahan Rorotan, Kecamatan Cilincing, dengan luas lahan mencapai kurang lebih 27.000 m². Status akreditasinya adalah A, dan sekolah ini berada langsung di bawah naungan pemerintah pusat. Sarana pendukung belajar cukup lengkap, mulai dari 46 ruang kelas, laboratorium untuk setiap jurusan, ruang praktik, hingga perpustakaan. Tidak hanya itu, fasilitas listrik, jaringan, serta area unit produksi membuat kegiatan pembelajaran lebih nyata dan sesuai dengan kebutuhan industri. Hal ini sejalan dengan penerapan standar manajemen mutu ISO 9001 yang membuat proses pembelajaran lebih terstruktur dan profesional.</p>
+</div>
     <img src="gedung.jpg" alt="Gedung SMKN 4 Jakarta" class="responsive-image" />
   </section>
 
