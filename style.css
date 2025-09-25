@@ -204,6 +204,7 @@ footer {
   nav ul li a {
     font-size: 1.1rem;
   }
+  
   header {
     flex-wrap: wrap;
   }
@@ -226,4 +227,208 @@ nav ul li a.active {
 
 .logo {
   transition: filter 0.3s ease;
+}
+/* Styling untuk konten utama */
+.content {
+  background: rgba(255, 255, 255, 0.85); /* putih transparan */
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 900px;
+  line-height: 1.6;
+  color: #000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* biar agak ngangkat */
+}
+
+.content h2 {
+  margin-top: 0;
+  text-align: center;
+}
+header {
+  display: flex;
+  justify-content: space-between; /* logo & hamburger otomatis di ujung berlawanan */
+  align-items: center;
+  padding: 10px 20px;
+  background: #111;
+  color: #fff;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #FFEB3B;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi jadi X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+/* Menu dari kanan */
+nav ul.right-menu {
+  flex-direction: column;
+  background-color: #222;
+  position: fixed;
+  top: 65px;
+  right: 0; /* nempel kanan */
+  left: auto; /* biar gak bentrok */
+  width: 200px;
+  height: calc(100vh - 65px);
+  padding: 15px;
+  gap: 10px;
+
+  transform: translateX(100%); /* sembunyi di kanan */
+  transition: transform 0.3s ease;
+
+  box-shadow: -2px 0 10px #f44336aa;
+  z-index: 9999;
+}
+
+nav ul.right-menu.open {
+  transform: translateX(0); /* masuk dari kanan */
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #111;
+  color: #fff;
+}
+
+/* Susunan dibalik */
+.logo-container {
+  order: 2; /* Logo di kanan */
+}
+
+.hamburger {
+  order: 1; /* Hamburger di kiri */
+}
+}
+/* Header utama */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;   /* biar logo+teks & hamburger pas tengah */
+  padding: 10px 20px;
+  background: #111;
+  color: #fff;
+}
+
+/* Logo & teks */
+.logo-container {
+  display: flex;
+  align-items: center;   /* logo & teks sejajar */
+  gap: 10px;
+}
+
+.logo-container img {
+  width: 40px;           /* samain tinggi sama hamburger */
+  height: 40px;
+  border-radius: 6px;
+}
+
+header h1 {
+  font-size: 1.4rem;     /* proporsional sama hamburger */
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;        /* teks nggak makan space ekstra */
+}
+
+/* Tombol Hamburger */
+.hamburger {
+  display: none; /* default hidden, nanti muncul di mobile */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #FFEB3B;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi hamburger jadi X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    background-color: #222;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    width: 200px;
+    height: calc(100vh - 65px);
+    padding: 15px;
+    gap: 10px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 10px #f44336aa;
+    z-index: 9999;
+  }
+
+  nav ul.open {
+    transform: translateX(0);
+  }
+}
+.hamburger {
+  margin-right: 20px; /* geser masuk dari kanan */
 }
