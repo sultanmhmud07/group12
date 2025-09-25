@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     item.style.cursor = "pointer"; // tanda klikable
     item.addEventListener("click", () => {
       const targetId = item.dataset.jurusan;
-      
+
       jurusanDetails.forEach((detail) => {
         if (detail.id === targetId) {
           // Toggle aktif/nonaktif dengan smooth toggle
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
             detail.classList.remove("active");
           } else {
             // tutup semua detail dulu
-            jurusanDetails.forEach(d => d.classList.remove("active"));
+            jurusanDetails.forEach((d) => d.classList.remove("active"));
             // buka detail yg dipilih
             detail.classList.add("active");
             // Scroll ke penjelasan yang aktif dengan smooth scroll
@@ -132,5 +132,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+});
 
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("open");
+  });
 });
